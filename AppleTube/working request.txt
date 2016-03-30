@@ -1,0 +1,10 @@
+POST /play HTTP/1.1
+User-Agent: MediaControl/1.0
+Content-Type: text/parameters
+Content-Length: 70
+X-Apple-Session-ID:fb6d816a-a5ad-4e8f-8830-9642b6e6eb35
+
+Content-Location: http://192.168.0.13:80/test.mp3
+Start-Position: 0
+
+add three to content length
