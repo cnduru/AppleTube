@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.buttonDisconnect = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.buttonPause = new System.Windows.Forms.Button();
-            this.buttonPlay = new System.Windows.Forms.Button();
             this.textBoxAppleTV = new System.Windows.Forms.TextBox();
+            this.buttonPlay = new System.Windows.Forms.Button();
+            this.buttonPause = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -46,6 +46,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(858, 561);
             this.panel1.TabIndex = 0;
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(858, 561);
+            this.webBrowser1.TabIndex = 0;
+            this.webBrowser1.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser1_Navigated);
             // 
             // buttonDisconnect
             // 
@@ -68,15 +78,21 @@
             this.panel2.Size = new System.Drawing.Size(858, 23);
             this.panel2.TabIndex = 2;
             // 
-            // webBrowser1
+            // textBoxAppleTV
             // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(858, 561);
-            this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser1_Navigated);
+            this.textBoxAppleTV.Location = new System.Drawing.Point(3, 3);
+            this.textBoxAppleTV.Name = "textBoxAppleTV";
+            this.textBoxAppleTV.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAppleTV.TabIndex = 4;
+            // 
+            // buttonPlay
+            // 
+            this.buttonPlay.Location = new System.Drawing.Point(617, 0);
+            this.buttonPlay.Name = "buttonPlay";
+            this.buttonPlay.Size = new System.Drawing.Size(75, 23);
+            this.buttonPlay.TabIndex = 3;
+            this.buttonPlay.Text = "Play";
+            this.buttonPlay.UseVisualStyleBackColor = true;
             // 
             // buttonPause
             // 
@@ -88,22 +104,6 @@
             this.buttonPause.UseVisualStyleBackColor = true;
             this.buttonPause.Click += new System.EventHandler(this.buttonPause_Click);
             // 
-            // buttonPlay
-            // 
-            this.buttonPlay.Location = new System.Drawing.Point(617, 0);
-            this.buttonPlay.Name = "buttonPlay";
-            this.buttonPlay.Size = new System.Drawing.Size(75, 23);
-            this.buttonPlay.TabIndex = 3;
-            this.buttonPlay.Text = "Play";
-            this.buttonPlay.UseVisualStyleBackColor = true;
-            // 
-            // textBoxAppleTV
-            // 
-            this.textBoxAppleTV.Location = new System.Drawing.Point(3, 3);
-            this.textBoxAppleTV.Name = "textBoxAppleTV";
-            this.textBoxAppleTV.Size = new System.Drawing.Size(100, 20);
-            this.textBoxAppleTV.TabIndex = 4;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,6 +112,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AppleTube by C. Nduru";
             this.panel1.ResumeLayout(false);
