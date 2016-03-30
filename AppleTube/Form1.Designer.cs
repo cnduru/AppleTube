@@ -32,6 +32,8 @@
             this.buttonDisconnect = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.buttonPause = new System.Windows.Forms.Button();
+            this.buttonPlay = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +58,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.buttonPlay);
+            this.panel2.Controls.Add(this.buttonPause);
             this.panel2.Controls.Add(this.buttonDisconnect);
             this.panel2.Location = new System.Drawing.Point(12, 588);
             this.panel2.Name = "panel2";
@@ -71,6 +75,24 @@
             this.webBrowser1.Size = new System.Drawing.Size(858, 561);
             this.webBrowser1.TabIndex = 0;
             this.webBrowser1.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser1_Navigated);
+            // 
+            // buttonPause
+            // 
+            this.buttonPause.Location = new System.Drawing.Point(698, 0);
+            this.buttonPause.Name = "buttonPause";
+            this.buttonPause.Size = new System.Drawing.Size(75, 23);
+            this.buttonPause.TabIndex = 2;
+            this.buttonPause.Text = "Pause";
+            this.buttonPause.UseVisualStyleBackColor = true;
+            // 
+            // buttonPlay
+            // 
+            this.buttonPlay.Location = new System.Drawing.Point(617, 0);
+            this.buttonPlay.Name = "buttonPlay";
+            this.buttonPlay.Size = new System.Drawing.Size(75, 23);
+            this.buttonPlay.TabIndex = 3;
+            this.buttonPlay.Text = "Play";
+            this.buttonPlay.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -94,6 +116,8 @@
         private System.Windows.Forms.Button buttonDisconnect;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.Button buttonPlay;
+        private System.Windows.Forms.Button buttonPause;
 
     }
 }

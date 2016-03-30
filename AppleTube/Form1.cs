@@ -15,14 +15,14 @@ namespace AppleTube
 {
     public partial class Form1 : Form
     {
+        // globals
+        List<string> urls = new List<string>();
+
         public Form1()
         {
             InitializeComponent();
-            //webBrowser1.Navigate("www.youtubeinmp3.com/fetch/?video=http://www.youtube.com/watch?v=i62Zjga8JOM");
             webBrowser1.Navigate("youtube.com");
         }
-
-        List<string> urls = new List<string>();
 
         private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
@@ -30,7 +30,7 @@ namespace AppleTube
             {
                 string url = webBrowser1.Url.ToString();
 
-                // to avoid repeat loading of URLs
+                // to avoid repeat loading of URL
                 if (!urls.Contains(url))
                 {
                     // thread parameterize this
