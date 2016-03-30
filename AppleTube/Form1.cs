@@ -22,13 +22,6 @@ namespace AppleTube
             webBrowser1.Navigate("youtube.com");
         }
 
-        //long milliseconds;
-
-        private void webBrowser1_Navigating(object sender, WebBrowserNavigatingEventArgs e)
-        {
-
-        }
-
         List<string> urls = new List<string>();
 
         private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
@@ -47,7 +40,7 @@ namespace AppleTube
 
                 urls.Add(url);
 
-                webBrowser1.Navigate("http://www.youtube.com");
+                //webBrowser1.Navigate("http://www.youtube.com");
             } 
             
         }
