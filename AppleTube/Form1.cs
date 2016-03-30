@@ -94,7 +94,7 @@ namespace AppleTube
 
                 StreamWriter st = new StreamWriter(tc.GetStream());
                 StreamReader sr = new StreamReader(tc.GetStream());
-                string body = getPlayBody(url, filename);
+                string body = CommandHelper.getPlayBody(url, filename);
                 st.Write(body);
                 st.Write("\n\n");
                 st.Flush();
@@ -121,23 +121,6 @@ namespace AppleTube
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private string getPlayBody(string url, string filename)
-        {
-            string req = String.Format("POST /play HTTP/1.1\n" +
-                   "User-Agent: MediaControl/1.0\n" +
-                   "Content-Type: text/parameters\n" +
-                   "Content-Length: {0}\n" +           
-                   "X-Apple-Session-ID: fb6d816a-a5ad-4e8f-8830-9642b6e6eb35\n\n", getPlayContent(url, filename).Length + 1);
-
-            return req + getPlayContent(url, filename);
-        }
-
-        private string getPlayContent(string url, string filename)
-        {
-            return String.Format("Content-Location: http://192.168.0.13:80/{0}\n" +
-                   "Start-Position: 0\n", filename);
         }
 
         private void buttonDisconnect_Click(object sender, EventArgs e)
@@ -175,7 +158,7 @@ namespace AppleTube
                     buttonPause.Enabled = false;
                     break;
                 case "stopStream":
-                    buttonPlay.Enabled = true;
+                    buttonPlay.Enabled = false; // make it so that the connection can be started again
                     buttonDisconnect.Enabled = false;
                     buttonPause.Enabled = false;
                     break;
