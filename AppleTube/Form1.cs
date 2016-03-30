@@ -17,6 +17,7 @@ namespace AppleTube
     {
         // globals
         List<string> urls = new List<string>();
+        TcpClient tc;
 
         public Form1()
         {
@@ -72,8 +73,6 @@ namespace AppleTube
             sendPlayRequest("http://192.168.0.13:80/" + fileName, fileName);
         }
 
-        TcpClient tc;
-
         private void sendPlayRequest(string url, string filename)
         {
             try
@@ -86,6 +85,24 @@ namespace AppleTube
                 st.Write(body);
                 st.Write("\n\n");
                 st.Flush();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void sendCommand(string cmd)
+        {
+            try
+            {
+                TcpClient tc = new TcpClient(textBoxAppleTV.Text, 7000);
+                StreamWriter st = new StreamWriter(tc.GetStream());
+
+                st.Write(cmd);
+                st.Write("\n\n");
+                st.Flush();
+                tc.Close();
             }
             catch (Exception ex)
             {
@@ -117,7 +134,14 @@ namespace AppleTube
 
         private void buttonPause_Click(object sender, EventArgs e)
         {
+            string command = CommandHelper.getPlaybackCommand("0.00000");
+            sendCommand(command);
+        }
 
+        private void buttonPlay_Click(object sender, EventArgs e)
+        {
+            string command = CommandHelper.getPlaybackCommand("1.00000");
+            sendCommand(command);
         }            
     }
 }
