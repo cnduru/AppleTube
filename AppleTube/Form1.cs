@@ -22,8 +22,18 @@ namespace AppleTube
         public Form1()
         {
             InitializeComponent();
+            initialize();
+        }
+
+        private void initialize()
+        {
             textBoxAppleTV.Text = "192.168.0.18";
             webBrowser1.Navigate("youtube.com");
+
+            // buttons
+            // adapt switchbuttonmode to incorporate these with a "startup" option or the like
+            buttonDisconnect.Enabled = false;
+            buttonPause.Enabled = false;
         }
 
         private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
@@ -54,6 +64,9 @@ namespace AppleTube
 
         private void download(string url)
         {
+            // update buttons
+            switchButtonState("play");
+
             string fileName = url.Substring(url.IndexOf("v=") + 2) + ".mp3";
 
             // download file
@@ -129,19 +142,46 @@ namespace AppleTube
 
         private void buttonDisconnect_Click(object sender, EventArgs e)
         {
+            switchButtonState("stopStream");
             tc.Close();
         }
 
         private void buttonPause_Click(object sender, EventArgs e)
         {
+            switchButtonState("pause");
             string command = CommandHelper.getPlaybackCommand("0.00000");
             sendCommand(command);
         }
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
+            switchButtonState("play");
             string command = CommandHelper.getPlaybackCommand("1.00000");
             sendCommand(command);
         }            
+
+        private void switchButtonState(string mode)
+        {
+            switch(mode)
+            {
+                case "play":
+                    buttonPlay.Enabled = true;
+                    buttonDisconnect.Enabled = true;
+                    buttonPause.Enabled = true;
+                    break;
+                case "pause":
+                    buttonPlay.Enabled = true;
+                    buttonDisconnect.Enabled = true;
+                    buttonPause.Enabled = false;
+                    break;
+                case "stopStream":
+                    buttonPlay.Enabled = true;
+                    buttonDisconnect.Enabled = false;
+                    buttonPause.Enabled = false;
+                    break;
+                default:
+                    throw new NotImplementedException();
+            }
+        }
     }
 }
