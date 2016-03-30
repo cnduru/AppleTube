@@ -7,3 +7,12 @@ C:\Users\Avalon\AppleTube\AppleTube\obj\Debug\AppleTube.Properties.Resources.res
 C:\Users\Avalon\AppleTube\AppleTube\obj\Debug\AppleTube.csproj.GenerateResource.Cache
 C:\Users\Avalon\AppleTube\AppleTube\obj\Debug\AppleTube.exe
 C:\Users\Avalon\AppleTube\AppleTube\obj\Debug\AppleTube.pdb
+C:\Users\Avalon\GitRepos\AppleTube\AppleTube\bin\Debug\AppleTube.exe.config
+C:\Users\Avalon\GitRepos\AppleTube\AppleTube\obj\Debug\AppleTube.exe
+C:\Users\Avalon\GitRepos\AppleTube\AppleTube\obj\Debug\AppleTube.pdb
+C:\Users\Avalon\GitRepos\AppleTube\AppleTube\bin\Debug\AppleTube.exe
+C:\Users\Avalon\GitRepos\AppleTube\AppleTube\bin\Debug\AppleTube.pdb
+C:\Users\Avalon\GitRepos\AppleTube\AppleTube\obj\Debug\AppleTube.csprojResolveAssemblyReference.cache
+C:\Users\Avalon\GitRepos\AppleTube\AppleTube\obj\Debug\AppleTube.Form1.resources
+C:\Users\Avalon\GitRepos\AppleTube\AppleTube\obj\Debug\AppleTube.Properties.Resources.resources
+C:\Users\Avalon\GitRepos\AppleTube\AppleTube\obj\Debug\AppleTube.csproj.GenerateResource.Cache

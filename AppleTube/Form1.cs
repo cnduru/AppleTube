@@ -119,8 +119,6 @@ namespace AppleTube
         private void buttonDisconnect_Click(object sender, EventArgs e)
         {
             tc.Close();
-        }
-                
-        
+        }            
     }
 }
