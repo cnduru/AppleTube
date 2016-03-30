@@ -34,6 +34,7 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.buttonPause = new System.Windows.Forms.Button();
             this.buttonPlay = new System.Windows.Forms.Button();
+            this.textBoxAppleTV = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +59,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.textBoxAppleTV);
             this.panel2.Controls.Add(this.buttonPlay);
             this.panel2.Controls.Add(this.buttonPause);
             this.panel2.Controls.Add(this.buttonDisconnect);
@@ -84,6 +86,7 @@
             this.buttonPause.TabIndex = 2;
             this.buttonPause.Text = "Pause";
             this.buttonPause.UseVisualStyleBackColor = true;
+            this.buttonPause.Click += new System.EventHandler(this.buttonPause_Click);
             // 
             // buttonPlay
             // 
@@ -93,6 +96,13 @@
             this.buttonPlay.TabIndex = 3;
             this.buttonPlay.Text = "Play";
             this.buttonPlay.UseVisualStyleBackColor = true;
+            // 
+            // textBoxAppleTV
+            // 
+            this.textBoxAppleTV.Location = new System.Drawing.Point(3, 3);
+            this.textBoxAppleTV.Name = "textBoxAppleTV";
+            this.textBoxAppleTV.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAppleTV.TabIndex = 4;
             // 
             // Form1
             // 
@@ -106,6 +116,7 @@
             this.Text = "AppleTube by C. Nduru";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -118,6 +129,7 @@
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Button buttonPlay;
         private System.Windows.Forms.Button buttonPause;
+        private System.Windows.Forms.TextBox textBoxAppleTV;
 
     }
 }

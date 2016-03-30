@@ -21,6 +21,7 @@ namespace AppleTube
         public Form1()
         {
             InitializeComponent();
+            textBoxAppleTV.Text = "192.168.0.18";
             webBrowser1.Navigate("youtube.com");
         }
 
@@ -77,7 +78,7 @@ namespace AppleTube
         {
             try
             {
-                tc = new TcpClient("192.168.0.18", 7000);
+                tc = new TcpClient(textBoxAppleTV.Text, 7000);
 
                 StreamWriter st = new StreamWriter(tc.GetStream());
                 StreamReader sr = new StreamReader(tc.GetStream());
@@ -112,6 +113,11 @@ namespace AppleTube
         private void buttonDisconnect_Click(object sender, EventArgs e)
         {
             tc.Close();
+        }
+
+        private void buttonPause_Click(object sender, EventArgs e)
+        {
+
         }            
     }
 }
