@@ -83,7 +83,7 @@ namespace AppleTube
                 }
             }
 
-            sendPlayRequest("http://192.168.0.13:80/" + fileName, fileName);
+            sendPlayRequest("http://192.168.0.10:80/" + fileName, fileName);
         }
 
         private void sendPlayRequest(string url, string filename)

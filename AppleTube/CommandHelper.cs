@@ -28,7 +28,8 @@ namespace AppleTube
 
         public static string getPlayContent(string url, string filename)
         {
-            return String.Format("Content-Location: http://192.168.0.13:80/{0}\n" +
+            // make a textbox for server address
+            return String.Format("Content-Location: http://192.168.0.10:80/{0}\n" +
                    "Start-Position: 0\n", filename);
         }
     }
